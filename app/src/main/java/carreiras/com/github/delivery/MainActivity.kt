@@ -60,7 +60,7 @@ fun BoxPreview() {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun CustomLayoutPreview() {
     Column(
