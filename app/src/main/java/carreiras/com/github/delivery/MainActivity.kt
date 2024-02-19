@@ -4,15 +4,21 @@ import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import carreiras.com.github.delivery.ui.theme.DeliveryappTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyFirstComposable()
+            DeliveryappTheme {
+                Surface {
+                    MyFirstComposable()
+                }
+            }
         }
     }
 }
@@ -24,9 +30,13 @@ fun MyFirstComposable() {
 }
 
 @Preview(
-    name = "TextPreview",
+    name = "NewTextPreview",
     showSystemUi = true,
     uiMode = UI_MODE_NIGHT_YES
+)
+@Preview(
+    name = "NewTextPreviewLight",
+    showSystemUi = true,
 )
 @Preview(
     name = "TextPreview",
@@ -37,5 +47,9 @@ fun MyFirstComposable() {
 )
 @Composable
 fun MyFirstComposablePreview() {
-    MyFirstComposable()
+    DeliveryappTheme {
+        Surface {
+            MyFirstComposable()
+        }
+    }
 }
