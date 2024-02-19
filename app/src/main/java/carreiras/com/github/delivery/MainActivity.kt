@@ -29,22 +29,7 @@ fun MyFirstComposable() {
     Text(text = "Meu segundo texto maior")
 }
 
-@Preview(
-    name = "NewTextPreview",
-    showSystemUi = true,
-    uiMode = UI_MODE_NIGHT_YES
-)
-@Preview(
-    name = "NewTextPreviewLight",
-    showSystemUi = true,
-)
-@Preview(
-    name = "TextPreview",
-    heightDp = 200,
-    widthDp = 300,
-    showBackground = true,
-    backgroundColor = 0xFFFF1144
-)
+@Preview()
 @Composable
 fun MyFirstComposablePreview() {
     DeliveryappTheme {
