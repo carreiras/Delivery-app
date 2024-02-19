@@ -78,6 +78,7 @@ fun CustomLayoutPreview() {
             modifier = Modifier
                 .padding(horizontal = 8.dp, vertical = 16.dp)
                 .background(Color.Green)
+                .fillMaxWidth()
         ) {
             Text("Texto 3")
             Text("Texto 4")
