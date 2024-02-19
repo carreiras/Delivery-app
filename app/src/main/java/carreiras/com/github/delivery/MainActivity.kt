@@ -59,8 +59,19 @@ fun CustomLayoutPreview() {
         Text("Texto 1")
         Text("Texto 2")
         Row {
-            Text("Texto 1")
-            Text("Texto 2")
+            Text("Texto 3")
+            Text("Texto 4")
+        }
+        Box {
+            Row {
+                Text("Texto 5")
+                Text("Texto 6")
+            }
+            Column {
+                Text("Texto 7")
+                Text("Texto 8")
+            }
+
         }
     }
 
