@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,7 +31,15 @@ fun ColumnPreview() {
         Text("Texto 1")
         Text("Texto 2")
     }
-    Text("Texto 3")
+}
+
+@Preview(showBackground = true)
+@Composable
+fun rowPreview() {
+    Row {
+        Text("Texto 1")
+        Text("Texto 2")
+    }
 }
 
 @Composable
