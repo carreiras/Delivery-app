@@ -1,5 +1,6 @@
 package carreiras.com.github.delivery
 
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -22,6 +23,11 @@ fun MyFirstComposable() {
     Text(text = "Meu segundo texto maior")
 }
 
+@Preview(
+    name = "TextPreview",
+    showSystemUi = true,
+    uiMode = UI_MODE_NIGHT_YES
+)
 @Preview(
     name = "TextPreview",
     heightDp = 200,
