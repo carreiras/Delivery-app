@@ -62,8 +62,8 @@ fun BoxPreview() {
 fun CustomLayoutPreview() {
     Column(
         Modifier
-            .padding(all = 8.dp)
             .background(color = Color.Blue)
+            .padding(all = 8.dp)
     ) {
         Text("Texto 1")
         Text("Texto 2")
