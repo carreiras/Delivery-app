@@ -87,7 +87,6 @@ fun CustomLayoutPreview() {
                 .padding(8.dp)
                 .background(color = Color.Red)
                 .padding(all = 8.dp)
-                .width(100.dp)
         ) {
             Row(
                 Modifier
