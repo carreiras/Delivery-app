@@ -92,6 +92,7 @@ fun CustomLayoutPreview() {
                     .padding(8.dp)
                     .background(color = Color.Cyan)
                     .padding(all = 8.dp)
+                    .fillMaxWidth()
             ) {
                 Text("Texto 5")
                 Text("Texto 6")
