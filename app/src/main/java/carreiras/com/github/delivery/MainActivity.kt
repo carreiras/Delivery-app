@@ -62,6 +62,7 @@ fun BoxPreview() {
 fun CustomLayoutPreview() {
     Column(
         Modifier
+            .padding(8.dp)
             .background(color = Color.Blue)
             .padding(all = 8.dp)
     ) {
