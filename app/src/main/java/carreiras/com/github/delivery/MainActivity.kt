@@ -68,16 +68,35 @@ fun CustomLayoutPreview() {
     ) {
         Text("Texto 1")
         Text("Texto 2")
-        Row {
+        Row(
+            modifier = Modifier
+                .padding(horizontal = 8.dp, vertical = 16.dp)
+                .background(Color.Green)
+        ) {
             Text("Texto 3")
             Text("Texto 4")
         }
-        Box {
-            Row {
+        Box(
+            Modifier
+                .padding(8.dp)
+                .background(color = Color.Red)
+                .padding(all = 8.dp)
+        ) {
+            Row(
+                Modifier
+                    .padding(8.dp)
+                    .background(color = Color.Cyan)
+                    .padding(all = 8.dp)
+            ) {
                 Text("Texto 5")
                 Text("Texto 6")
             }
-            Column {
+            Column(
+                Modifier
+                    .padding(8.dp)
+                    .background(color = Color.Yellow)
+                    .padding(all = 8.dp)
+            ) {
                 Text("Texto 7")
                 Text("Texto 8")
             }
