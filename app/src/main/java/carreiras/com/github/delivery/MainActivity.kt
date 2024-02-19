@@ -22,7 +22,13 @@ fun MyFirstComposable() {
     Text(text = "Meu segundo texto maior")
 }
 
-@Preview
+@Preview(
+    name = "TextPreview",
+    heightDp = 200,
+    widthDp = 300,
+    showBackground = true,
+    backgroundColor = 0xFFFF1144
+)
 @Composable
 fun MyFirstComposablePreview() {
     MyFirstComposable()
