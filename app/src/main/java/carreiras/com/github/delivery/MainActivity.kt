@@ -3,6 +3,7 @@ package carreiras.com.github.delivery
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Surface
@@ -37,6 +38,15 @@ fun ColumnPreview() {
 @Composable
 fun rowPreview() {
     Row {
+        Text("Texto 1")
+        Text("Texto 2")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun BoxPreview() {
+    Box {
         Text("Texto 1")
         Text("Texto 2")
     }
