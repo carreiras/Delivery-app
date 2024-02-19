@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -86,6 +87,7 @@ fun CustomLayoutPreview() {
                 .padding(8.dp)
                 .background(color = Color.Red)
                 .padding(all = 8.dp)
+                .width(100.dp)
         ) {
             Row(
                 Modifier
