@@ -30,6 +30,7 @@ fun ColumnPreview() {
         Text("Texto 1")
         Text("Texto 2")
     }
+    Text("Texto 3")
 }
 
 @Composable
