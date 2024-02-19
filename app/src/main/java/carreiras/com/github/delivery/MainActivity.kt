@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -68,6 +69,7 @@ fun CustomLayoutPreview() {
             .background(color = Color.Blue)
             .padding(all = 8.dp)
             .fillMaxWidth()
+            .fillMaxHeight()
     ) {
         Text("Texto 1")
         Text("Texto 2")
