@@ -18,7 +18,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MyFirstComposable() {
-    Text(text = "My first Composable")
+    Text(text = "Meu primeiro texto")
+    Text(text = "Meu segundo texto maior")
 }
 
 @Preview
