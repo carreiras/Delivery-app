@@ -52,6 +52,20 @@ fun BoxPreview() {
     }
 }
 
+@Preview(showBackground = true)
+@Composable
+fun CustomLayoutPreview() {
+    Column {
+        Text("Texto 1")
+        Text("Texto 2")
+        Row {
+            Text("Texto 1")
+            Text("Texto 2")
+        }
+    }
+
+}
+
 @Composable
 fun MyFirstComposable() {
     Text(text = "Meu primeiro texto")
