@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DeliveryappTheme {
                 Surface {
-                    MyFirstComposable()
+                    CustomLayoutPreview()
                 }
             }
         }
