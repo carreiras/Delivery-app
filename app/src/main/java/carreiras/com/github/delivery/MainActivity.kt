@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -65,6 +66,7 @@ fun CustomLayoutPreview() {
             .padding(8.dp)
             .background(color = Color.Blue)
             .padding(all = 8.dp)
+            .height(400.dp)
     ) {
         Text("Texto 1")
         Text("Texto 2")
