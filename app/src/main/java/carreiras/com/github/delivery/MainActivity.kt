@@ -48,7 +48,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Preview(showBackground = true)
 @Composable
 fun ProductItem() {
     Surface (Modifier.padding(8.dp), shape = RoundedCornerShape(15.dp), shadowElevation = 4.dp) {
@@ -100,4 +99,10 @@ fun ProductItem() {
             }
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun ProductItemPreview() {
+    ProductItem()
 }
