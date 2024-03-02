@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,6 +18,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
@@ -54,22 +57,63 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+fun ProductSection() {
+    Column {
+        Text(
+            text = "Promoções",
+            Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp),
+            fontSize = 20.sp,
+            fontWeight = FontWeight(400)
+        )
+        Row(
+            Modifier
+                .padding(top = 8.dp, bottom = 16.dp)
+                .fillMaxWidth()
+                .horizontalScroll(rememberScrollState()),
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            Spacer(Modifier)
+            ProductItem(
+                Product(
+                    name = "Hamburguer",
+                    price = BigDecimal("12.99"),
+                    image = R.drawable.burger
+                )
+            )
+            ProductItem(
+                Product(
+                    name = "Pizza",
+                    price = BigDecimal("17.99"),
+                    image = R.drawable.pizza
+                )
+            )
+            ProductItem(
+                Product(
+                    name = "Batata Frita",
+                    price = BigDecimal("7.99"),
+                    image = R.drawable.fries
+                )
+            )
+            Spacer(Modifier)
+        }
+    }
+}
+
+@Composable
 fun ProductItem(product: Product) {
-    Surface(Modifier.padding(8.dp), shape = RoundedCornerShape(15.dp), shadowElevation = 4.dp) {
+    Surface(shape = RoundedCornerShape(15.dp), shadowElevation = 4.dp) {
         Column(
             Modifier
-                .heightIn(250.dp)
+                .heightIn(250.dp, 300.dp)
                 .width(200.dp)
         ) {
+            val imageSize = 100.dp
             Box(
                 modifier = Modifier
-                    .height(100.dp)
+                    .height(imageSize)
                     .background(
                         brush = Brush.horizontalGradient(
-                            colors = listOf(
-                                Purple500,
-                                Teal200
-                            )
+                            colors = listOf(Purple500, Teal200)
                         )
                     )
                     .fillMaxWidth()
@@ -78,8 +122,8 @@ fun ProductItem(product: Product) {
                     painter = painterResource(id = product.image),
                     contentDescription = null,
                     Modifier
-                        .size(100.dp)
-                        .offset(y = 50.dp)
+                        .size(imageSize)
+                        .offset(y = imageSize / 2)
                         .clip(shape = CircleShape)
                         .align(BottomCenter),
                     contentScale = ContentScale.Crop
@@ -88,17 +132,16 @@ fun ProductItem(product: Product) {
             Spacer(modifier = Modifier.height(50.dp))
 
             Column(Modifier.padding(16.dp)) {
-
                 Text(
                     text = product.name,
                     fontSize = 18.sp,
                     fontWeight = FontWeight(700),
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
-
                 )
                 Text(
                     text = product.price.toBrazilianCurrency(),
+                    Modifier.padding(top = 8.dp),
                     fontSize = 14.sp,
                     fontWeight = FontWeight(400)
                 )
@@ -107,29 +150,6 @@ fun ProductItem(product: Product) {
     }
 }
 
-@Composable
-fun ProductSection() {
-    Column {
-        Text(text = "Promoções")
-        Row {
-            ProductItem(Product(
-                name = "Hamburguer",
-                price = BigDecimal("12.99"),
-                image = R.drawable.burger
-            ))
-            ProductItem(Product(
-                name = "Pizza",
-                price = BigDecimal("17.99"),
-                image = R.drawable.pizza
-            ))
-            ProductItem(Product(
-                name = "Batata Frita",
-                price = BigDecimal("7.99"),
-                image = R.drawable.fries
-            ))
-        }
-    }
-}
 
 @Preview(showBackground = true)
 @Composable
