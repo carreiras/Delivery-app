@@ -34,6 +34,7 @@ import carreiras.com.github.delivery.R
 import carreiras.com.github.delivery.extensions.toBrazilianCurrency
 import carreiras.com.github.delivery.model.Product
 import carreiras.com.github.delivery.ui.theme.DeliveryappTheme
+import coil.compose.AsyncImage
 import java.math.BigDecimal
 
 @Composable
@@ -61,16 +62,16 @@ fun ProductItem(product: Product) {
                     )
                     .fillMaxWidth()
             ) {
-                Image(
-                    // TODO: ajustar imagem do produto
-                    painter = painterResource(id = R.drawable.placeholder),
+                AsyncImage(
+                    model = product.image,
                     contentDescription = null,
                     Modifier
                         .size(imageSize)
                         .offset(y = imageSize / 2)
                         .clip(shape = CircleShape)
                         .align(Alignment.BottomCenter),
-                    contentScale = ContentScale.Crop
+                    contentScale = ContentScale.Crop,
+                    placeholder = painterResource(id = R.drawable.placeholder)
                 )
             }
             Spacer(modifier = Modifier.height(imageSize / 2))
