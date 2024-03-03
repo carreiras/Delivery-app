@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -17,29 +18,36 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import carreiras.com.github.delivery.model.Product
 import carreiras.com.github.delivery.sampledata.sampleProducts
+import carreiras.com.github.delivery.ui.theme.DeliveryappTheme
 
 @Composable
-fun ProductSection(title: String, products: List<Product>) {
+fun ProductsSection(
+    title: String,
+    products: List<Product>
+) {
     Column {
         Text(
             text = title,
-            Modifier.padding(start = 16.dp, end = 16.dp),
+            Modifier.padding(
+                start = 16.dp,
+                end = 16.dp
+            ),
             fontSize = 20.sp,
             fontWeight = FontWeight(400)
         )
         Row(
             Modifier
-                .padding(top = 8.dp)
+                .padding(
+                    top = 8.dp
+                )
                 .fillMaxWidth()
                 .horizontalScroll(rememberScrollState()),
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Spacer(Modifier)
-
             for (p in products) {
                 ProductItem(product = p)
             }
-
             Spacer(Modifier)
         }
     }
@@ -47,8 +55,10 @@ fun ProductSection(title: String, products: List<Product>) {
 
 @Preview(showBackground = true)
 @Composable
-private fun ProductSectionPreview() {
-    ProductSection("Promoções", products = sampleProducts)
-
+private fun ProductsSectionPreview() {
+    DeliveryappTheme {
+        Surface {
+            ProductsSection(title = "Promoções", products = sampleProducts)
+        }
+    }
 }
-

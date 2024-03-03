@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -32,13 +33,15 @@ import androidx.compose.ui.unit.sp
 import carreiras.com.github.delivery.R
 import carreiras.com.github.delivery.extensions.toBrazilianCurrency
 import carreiras.com.github.delivery.model.Product
-import carreiras.com.github.delivery.ui.theme.Purple500
-import carreiras.com.github.delivery.ui.theme.Teal200
+import carreiras.com.github.delivery.ui.theme.DeliveryappTheme
 import java.math.BigDecimal
 
 @Composable
 fun ProductItem(product: Product) {
-    Surface(shape = RoundedCornerShape(15.dp), shadowElevation = 4.dp) {
+    Surface(
+        shape = RoundedCornerShape(15.dp),
+        shadowElevation = 4.dp
+    ) {
         Column(
             Modifier
                 .heightIn(250.dp, 300.dp)
@@ -50,13 +53,17 @@ fun ProductItem(product: Product) {
                     .height(imageSize)
                     .background(
                         brush = Brush.horizontalGradient(
-                            colors = listOf(Purple500, Teal200)
+                            colors = listOf(
+                                MaterialTheme.colorScheme.primary,
+                                MaterialTheme.colorScheme.secondary
+                            )
                         )
                     )
                     .fillMaxWidth()
             ) {
                 Image(
-                    painter = painterResource(id = product.image),
+                    // TODO: ajustar imagem do produto
+                    painter = painterResource(id = R.drawable.placeholder),
                     contentDescription = null,
                     Modifier
                         .size(imageSize)
@@ -66,8 +73,7 @@ fun ProductItem(product: Product) {
                     contentScale = ContentScale.Crop
                 )
             }
-            Spacer(modifier = Modifier.height(50.dp))
-
+            Spacer(modifier = Modifier.height(imageSize / 2))
             Column(Modifier.padding(16.dp)) {
                 Text(
                     text = product.name,
@@ -90,11 +96,14 @@ fun ProductItem(product: Product) {
 @Preview(showBackground = true)
 @Composable
 private fun ProductItemPreview() {
-    ProductItem(
-        Product(
-            name = LoremIpsum(50).values.first(),
-            price = BigDecimal("14.99"),
-            image = R.drawable.placeholder
-        )
-    )
+    DeliveryappTheme {
+        Surface {
+            ProductItem(
+                Product(
+                    name = LoremIpsum(50).values.first(),
+                    price = BigDecimal("14.99")
+                )
+            )
+        }
+    }
 }
