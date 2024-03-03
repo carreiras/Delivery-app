@@ -1,6 +1,7 @@
 package carreiras.com.github.delivery.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -21,12 +22,10 @@ fun HomeScreen(
     LazyColumn(
         Modifier
             .fillMaxSize(),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+        contentPadding = PaddingValues(vertical = 16.dp)
     ) {
-        item {
-            Spacer(Modifier)
 
-        }
         for (section in sections) {
             val title = section.key
             val products = section.value
@@ -37,9 +36,7 @@ fun HomeScreen(
                 )
             }
         }
-        item {
-            Spacer(Modifier)
-        }
+
     }
 }
 
