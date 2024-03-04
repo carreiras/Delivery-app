@@ -42,7 +42,7 @@ fun HomeScreen(
                 text = newValue
             },
             Modifier
-                .padding(start = 16.dp, top = 16.dp, end = 16.dp)
+                .padding(16.dp)
                 .fillMaxWidth(),
             shape = RoundedCornerShape(100),
             leadingIcon = {
@@ -62,7 +62,10 @@ fun HomeScreen(
             contentPadding = PaddingValues(vertical = 16.dp)
         ) {
             items(sampleProducts) { p ->
-                CardProductItem(product = p)
+                CardProductItem(
+                    product = p,
+                    Modifier.padding(horizontal = 16.dp)
+                )
             }
 //            for (section in sections) {
 //                val title = section.key
